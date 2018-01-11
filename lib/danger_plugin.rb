@@ -215,6 +215,7 @@ module Danger
       dir = "#{Dir.pwd}/"
       results.each do |r|
         filename = r['file'].gsub(dir, '')
+        new_reason = "#{filename}#L#{r['line']}: r['reason']"
         send(method, r['reason'], file: filename, line: r['line'])
       end
     end
