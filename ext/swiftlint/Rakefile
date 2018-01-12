@@ -15,7 +15,7 @@ namespace :swiftlint do
     sh [
       "mkdir -p #{DESTINATION}",
       "curl -s -L #{URL} -o #{ASSET}",
-      "unzip -q #{ASSET} -d #{DESTINATION}",
+      "unzip -o -q #{ASSET} -d #{DESTINATION}",
       "rm #{ASSET}"
     ].join(' && ')
   end
