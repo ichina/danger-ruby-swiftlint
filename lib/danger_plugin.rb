@@ -214,7 +214,7 @@ module Danger
     def send_inline_comment(results, method)
       dir = "#{Dir.pwd}/"
       results.each do |r|
-        filename = r['file'].gsub(dir, '')
+        filename = r['file'].split('/').last
         new_reason = "#{filename}#L#{r['line']}: #{r['reason']}"
         send(method, new_reason, file: filename, line: r['line'])
       end
