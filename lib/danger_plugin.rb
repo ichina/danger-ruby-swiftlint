@@ -216,7 +216,7 @@ module Danger
       results.each do |r|
         filename = r['file'].gsub(dir, '')
         new_reason = "#{filename}#L#{r['line']}: r['reason']"
-        send(method, r['reason'], file: filename, line: r['line'])
+        send(method, new_reason, file: filename, line: r['line'])
       end
     end
 
