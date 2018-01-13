@@ -215,7 +215,7 @@ module Danger
       dir = "#{Dir.pwd}/"
       results.each do |r|
         filename = r['file'].split('/').last
-        new_reason = "#{filename}#L#{r['line']}: #{r['reason']}"
+        new_reason = "#{filename}:#{r['line']} #{r['reason']}"
         send(method, new_reason, file: filename, line: r['line'])
       end
     end
